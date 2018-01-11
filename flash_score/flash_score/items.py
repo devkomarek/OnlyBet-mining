@@ -12,5 +12,4 @@ class ClubSearch(scrapy.Item):
     url = scrapy.Field()
     name = scrapy.Field()
     country = scrapy.Field()
-    logo_url = scrapy.Field()
     pass

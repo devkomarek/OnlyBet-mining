@@ -8,6 +8,21 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+# Enables scheduling storing requests queue in rabbitmq.
+# Enable RabbitMQ scheduler
+SCHEDULER = "scrapy_rabbitmq_link.scheduler.SaaS"
+
+# Provide AMQP connection string
+RABBITMQ_CONNECTION_PARAMETERS = 'amqp://guest:guest@localhost:5672/'
+
+# Set response status codes to requeue messages on
+SCHEDULER_REQUEUE_ON_STATUS = [500]
+
+# Middleware acks RabbitMQ message on success
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_rabbitmq_link.middleware.RabbitMQMiddleware': 999
+}
+
 
 BOT_NAME = 'flash_score'
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'

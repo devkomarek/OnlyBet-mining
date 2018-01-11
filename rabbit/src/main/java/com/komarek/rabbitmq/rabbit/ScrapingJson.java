@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author komarekzm
  */
-class ScrapingResultMessage {
+class ScrapingJson {
  
 private String json;
 
-    public ScrapingResultMessage() {
+    public ScrapingJson() {
     }
 
-    public ScrapingResultMessage(String json) {
+    public ScrapingJson(String json) {
         this.json = json;
     }
 

@@ -5,8 +5,6 @@
  */
 package com.komarek.rabbitmq.rabbit;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -49,7 +47,7 @@ public class RabbitMqConfiguration
     public DefaultClassMapper classMapper()
     {
         DefaultClassMapper typeMapper = new DefaultClassMapper();
-        typeMapper.setDefaultType(ScrapingResultMessage.class);
+        typeMapper.setDefaultType(ScrapingJson.class);
 //        Map<String, Class<?>> idClassMapping = new HashMap<>();
 //        idClassMapping.put("name", UnitAmqpMessage.class);
 //        typeMapper.setIdClassMapping(idClassMapping);

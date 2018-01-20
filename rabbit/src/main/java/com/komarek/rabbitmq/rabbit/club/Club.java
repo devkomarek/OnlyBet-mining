@@ -3,20 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.komarek.rabbitmq.rabbit;
+package com.komarek.rabbitmq.rabbit.club;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author komarekzm
  */
+@Document
 public class Club {
     @Id
     private String id;
     private String url;
     private String name;
     private String country;
+    private ClubData data;
+
+    public ClubData getData() {
+        return data;
+    }
+
+    public void setData(ClubData data) {
+        this.data = data;
+    }
 
     public Club(String id, String url, String name, String country) {
         this.id = id;

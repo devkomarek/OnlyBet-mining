@@ -5,13 +5,11 @@
  */
 package com.komarek.rabbitmq.rabbit;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-
+import com.komarek.rabbitmq.rabbit.club.Club;
 import org.springframework.stereotype.Component;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
+
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
 @Component
@@ -19,15 +17,17 @@ public class ScrapingResultHandler
 {
 
     @RabbitListener(queues = "result.queue")
-    public void handleMessage(ScrapingJson scrapingJson)
+    public void handleMessage(List<Club> scrapingJson)
     {
-        ObjectMapper mapper = new ObjectMapper(); 
-        Club value;
-        try {
-            value = mapper.readValue(scrapingJson.getJson(), Club.class);
-        } catch (IOException ex) {
-            Logger.getLogger(ScrapingResultHandler.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        System.out.println("Received summary: " + scrapingJson.getJson());
+        System.out.println(scrapingJson.get(0).getName());
+//        if(scrapingJson.getJson() == null) return;
+//        ObjectMapper mapper = new ObjectMapper();
+//        Club value = null;
+//        try {
+//            value = mapper.readValue(scrapingJson.getJson(), Club.class);
+//        } catch (IOException ex) {
+//            Logger.getLogger(ScrapingResultHandler.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        System.out.println("Received summary: " + value.getId());
     }
 }

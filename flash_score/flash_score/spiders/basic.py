@@ -7,7 +7,7 @@ from flash_score.items import ClubSearch
 
 class BasicSpider(scrapy.Spider):
     name = 'basic'
-    amqp_key = 'test'
+    amqp_key = 'basic'
     allowed_domains = ['https://www.flashscore.com/', 'https://www.s.flashscore.com/']
 
     def _make_request(self, mframe, hframe, body):

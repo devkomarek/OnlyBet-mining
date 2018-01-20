@@ -27,7 +27,7 @@ public class ScrapingResultConsumerConfiguration extends RabbitMqConfiguration
 		RabbitTemplate template = new RabbitTemplate(connectionFactory());
 		template.setRoutingKey(this.scrapingResultQueue);
 		template.setQueue(this.scrapingResultQueue);
-               // template.setMessageConverter(jsonMessageConverter());
+                template.setMessageConverter(jsonMessageConverter());
 		return template;
 	}
 

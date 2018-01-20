@@ -5,6 +5,7 @@
  */
 package com.komarek.rabbitmq.rabbit;
 
+import com.komarek.rabbitmq.rabbit.club.Club;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -39,7 +40,6 @@ public class RabbitMqConfiguration
     public MessageConverter jsonMessageConverter()
     {
         Jackson2JsonMessageConverter converter = new Jackson2JsonMessageConverter();
-        converter.setClassMapper(classMapper());
         return converter;
     }
 
@@ -47,9 +47,9 @@ public class RabbitMqConfiguration
     public DefaultClassMapper classMapper()
     {
         DefaultClassMapper typeMapper = new DefaultClassMapper();
-        typeMapper.setDefaultType(ScrapingJson.class);
+        typeMapper.setDefaultType(Club.class);
 //        Map<String, Class<?>> idClassMapping = new HashMap<>();
-//        idClassMapping.put("name", UnitAmqpMessage.class);
+//        idClassMapping.put("_values", Club.class);
 //        typeMapper.setIdClassMapping(idClassMapping);
         return typeMapper;
     }

@@ -1,54 +1,66 @@
 package com.komarek.rabbitmq.rabbit.domain;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 import java.util.Date;
 
 public class Bookmark
 {
-    private long id;
-    private String url;
-    private String summary;
+    private String id;
+    private String name;
+    private Date dateFrom;
+    private Date dateTo;
     private Date created;
 
-    private String note;
-
-    public Date getCreated()
-    {
-        return created;
-    }
-
-    public void setCreated(Date created)
-    {
+    public Bookmark(String id, String name, Date dateFrom, Date dateTo, Date created) {
+        this.id = id;
+        this.name = name;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
         this.created = created;
     }
 
-    public String getUrl()
-    {
-        return url;
+    public Bookmark() {
     }
 
-    public void setUrl(String url)
-    {
-        this.url = url;
+    public String getId() {
+        return id;
     }
 
-    public String getSummary()
-    {
-        return summary;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setSummary(String summary)
-    {
-        this.summary = summary;
+    public String getName() {
+        return name;
     }
 
-    public String getNote()
-    {
-        return note;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setNote(String note)
-    {
-        this.note = note;
+    public Date getDateFrom() {
+        return dateFrom;
+    }
+
+    public void setDateFrom(Date dateFrom) {
+        this.dateFrom = dateFrom;
+    }
+
+    public Date getDateTo() {
+        return dateTo;
+    }
+
+    public void setDateTo(Date dateTo) {
+        this.dateTo = dateTo;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

@@ -1,4 +1,4 @@
-# OnlyBet-mining (wersja dokumentacji v.0.7.1)
+# OnlyBet-mining
 OnlyBet-mining jest modułem platformy OnlyBet. Moduł ten to zbiór statystyk drużyn, zawodników, rozegranych meczy.
 ### Zestaw technologii:
 -Mongo DB

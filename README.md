@@ -10,7 +10,7 @@ OnlyBet-mining jest modułem platformy OnlyBet. Moduł ten to zbiór statystyk d
 -scrapy-splash (pip module)
 ### Architektura
 Cały system OnlyBet-mining opiera się na 2 elementach, mikroserwisu oraz botów (spiders). Za spoiwo tych dwóch elementów służy zespół kolejek. Wszystkie informacje zebrane są zapisywane do bazy danych.
-
+![alt text](https://github.com/devkomarek/OnlyBet-mining/blob/master/architecture.jpg)
 W poniższych opisach będę odwoływał się do nazewnictwa zamieszczonego wyżej modelu. I tak jeśli w opisie znajdzie się Sn to proszę to interpretować jako n-ty skrapujący bot (spider), a SM jako spider manager. Prosze mieć to na uwadze!
 ### Cechy projektu:
 #### -Połącznie mikroserwisów jeden do wielu (1-n) gdzie 1 to SM, a n to Sn
